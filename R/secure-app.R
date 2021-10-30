@@ -80,7 +80,7 @@ secure_app <- function(ui,
               actionButton(
                 inputId = ".shinymanager_logout",
                 label = lan$get("Logout"),
-                icon = icon("sign-out")
+                icon = icon("sign-out-alt")
               ),
               actionButton(
                 inputId = ".shinymanager_app",
@@ -109,7 +109,7 @@ secure_app <- function(ui,
             actionButton(
               inputId = ".shinymanager_logout",
               label = lan$get("Logout"),
-              icon = icon("sign-out")
+              icon = icon("sign-out-alt")
             ),
             actionButton(
               inputId = ".shinymanager_admin",
@@ -126,7 +126,7 @@ secure_app <- function(ui,
             actionButton(
               inputId = ".shinymanager_logout",
               label = lan$get("Logout"),
-              icon = icon("sign-out")
+              icon = icon("sign-out-alt")
             )
           )
         }
@@ -209,12 +209,12 @@ secure_server <- function(check_credentials,
                           session = shiny::getDefaultReactiveDomain()) {
 
   session$setBookmarkExclude(c(session$getBookmarkExclude(),
-                               "shinymanager_language", 
-                               ".shinymanager_timeout", 
+                               "shinymanager_language",
+                               ".shinymanager_timeout",
                                ".shinymanager_admin",
-                               ".shinymanager_logout", 
+                               ".shinymanager_logout",
                                "shinymanager_where"))
-  
+
   token_start <- isolate(getToken(session = session))
   if (isTRUE(keep_token)) {
     .tok$reset_count(token_start)
